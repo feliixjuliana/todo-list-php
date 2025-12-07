@@ -1,60 +1,180 @@
-# CodeIgniter 4 Framework
+# 🗓️ Agenda Eletrônica — Sistema de Tarefas
 
-## What is CodeIgniter?
+## O que é este projeto?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+A **Agenda Eletrônica** é um sistema completo de gerenciamento de tarefas, desenvolvido com **PHP (CodeIgniter 4.6)**, **MySQL**, **Bootstrap**, **JavaScript** e um calendário interativo personalizado.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Cada usuário visualiza **somente suas próprias tarefas**, garantindo segurança e isolamento de dados.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+---
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Funcionalidades Principais
 
-## Important Change with index.php
+* Cadastro de usuários
+* Login / Logout
+* Criação de tarefas
+* Listagem de tarefas
+* Alteração de status (Pendente, Concluído, Cancelado)
+* Exclusão de tarefas
+* Exibição das tarefas no calendário
+* Modal inteligente que já abre com a data selecionada no calendário
+* Envio e recebimento de dados via JSON
+* Proteções: CSRF, sessão, foreign key, hash de senha
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## Calendário e Modal
 
-**Please** read the user guide for a better explanation of how CI4 works!
+* Tarefas são carregadas via `/tasks/events` em formato JSON
+* Lista lateral e calendário consomem o mesmo endpoint
+* Interface totalmente responsiva feita com Bootstrap 5
 
-## Repository Management
+---
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Estrutura do Projeto (Resumo)
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+```
+/app
+   /Controllers
+   /Models
+   /Views
+/public
+   /assets
+      /calendar-04
+      /js
+      /css
+```
 
-## Contributing
+---
 
-We welcome contributions from the community.
+## Banco de Dados
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+As migrations criam duas tabelas:
 
-## Server Requirements
+### `users`
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+```sql
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_login VARCHAR(255) UNIQUE NOT NULL,
+    user_password VARCHAR(255) NOT NULL
+);
+```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+### `tasks`
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+```sql
+CREATE TABLE tasks (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    start_date DATETIME,
+    end_date DATETIME,
+    status ENUM('pendente','completado','cancelado') DEFAULT 'pendente',
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## Requisitos do Servidor
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+PHP **8.1 ou superior**, com:
+
+* intl
+* mbstring
+* json
+* curl
+* mysqlnd
+
+MySQL 5.7+ recomendado.
+
+---
+
+## Instalação
+
+### 1. Clone o repositório:
+
+```sh
+git clone https://github.com/feliixjuliana/todo-list-php.git
+cd todo-list-php
+```
+
+### 2. Crie o banco:
+
+```sql
+CREATE DATABASE tarefas_db
+```
+
+### 3. Configure o `.env`:
+
+```
+CI_ENVIRONMENT = development
+
+database.default.hostname = localhost
+database.default.database = tarefas_db
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+```
+
+### 4. Execute as migrations:
+
+```sh
+php spark migrate
+```
+
+### 5. Inicie o servidor:
+
+```sh
+php spark serve
+```
+
+Acesse:
+
+👉 [http://localhost:8080](http://localhost:8080)
+
+---
+
+## Endpoints Importantes
+
+### Retorna todas as tarefas do usuário logado:
+
+```
+GET /tasks/events
+```
+
+Exemplo de resposta:
+
+```json
+[
+  {
+    "id": 3,
+    "title": "Lavar os pratos",
+    "description": "Pratos apenas da tarde",
+    "start": "2025-12-12 10:30:00",
+    "end": "2025-12-12 12:00:00",
+    "status": "pendente"
+  }
+]
+```
+
+---
+
+## Fluxo do Usuário
+
+1. Registrar
+2. Logar
+3. Acessar calendário
+4. Criar tarefa
+5. Editar status ou excluir
+
+---
+
+## Melhorias Futuras
+
+* Edição completa da tarefa
+* Busca por filtros
+* Estatísticas do usuário
+* Agenda semanal
+* Notificações
+
