@@ -319,3 +319,300 @@ in SYSTEMPATH\Database\Database.php on line 143.
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
 11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\tania\\OneDrive\\Documentos\\Tarefas-php\\public\\index.php')
+DEBUG - 2025-12-06 20:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:25:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:25:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-06 20:26:03 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php(201): mysqli->real_connect()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Controllers\RegisterController.php(27): CodeIgniter\BaseModel->first()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(933): App\Controllers\RegisterController->store()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#13 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Controllers\RegisterController.php(27): CodeIgniter\BaseModel->first()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(933): App\Controllers\RegisterController->store()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2025-12-06 20:26:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: register/store]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\RegisterController.php(27): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegisterController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\tania\\OneDrive\\Documentos\\Tarefas-php\\public\\index.php')
+DEBUG - 2025-12-06 20:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-06 20:26:16 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php(201): mysqli->real_connect()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(933): App\Controllers\LoginController->auth()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#13 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(933): App\Controllers\LoginController->auth()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2025-12-06 20:26:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: login/auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\tania\\OneDrive\\Documentos\\Tarefas-php\\public\\index.php')
+ERROR - 2025-12-06 22:15:14 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NOT NULL,
+	`user_password` VARCHAR NOT NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(' at line 3 in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php(327): mysqli->query()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Database\Migrations\2025-12-06-163038_CreateUsersTable.php(30): CodeIgniter\Database\Forge->createTable()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateUsersTable->up()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(133): CodeIgniter\Boot::runCommand()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\spark(87): CodeIgniter\Boot::bootSpark()
+#13 {main}
+DEBUG - 2025-12-06 22:16:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-06 22:16:30 --> mysqli_sql_exception: Table 'tarefas_db.users' doesn't exist in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php(327): mysqli->query()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Controllers\RegisterController.php(27): CodeIgniter\BaseModel->first()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(933): App\Controllers\RegisterController->store()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#13 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\rewrite.php(44): require_once('...')
+#14 {main}
+CRITICAL - 2025-12-06 22:16:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'tarefas_db.users' doesn't exist
+[Method: POST, Route: register/store]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\RegisterController.php(27): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegisterController->store()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\tania\\OneDrive\\Documentos\\Tarefas-php\\public\\index.php')
+CRITICAL - 2025-12-06 22:16:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'tarefas_db.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\RegisterController.php(27): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegisterController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\tania\\OneDrive\\Documentos\\Tarefas-php\\public\\index.php')
+CRITICAL - 2025-12-06 22:16:30 --> [Caused by] mysqli_sql_exception: Table 'tarefas_db.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\RegisterController.php(27): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegisterController->store()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\tania\\OneDrive\\Documentos\\Tarefas-php\\public\\index.php')
+ERROR - 2025-12-06 22:22:58 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NOT NULL,
+	`user_password` VARCHAR NOT NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(' at line 3 in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php(327): mysqli->query()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Database\Migrations\2025-12-06-163038_CreateUsersTable.php(30): CodeIgniter\Database\Forge->createTable()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateUsersTable->up()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(133): CodeIgniter\Boot::runCommand()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\spark(87): CodeIgniter\Boot::bootSpark()
+#13 {main}
+DEBUG - 2025-12-06 22:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:29:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-06 22:35:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php(201): mysqli->real_connect()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(933): App\Controllers\LoginController->auth()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#13 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\Users\tania\OneDrive\Documentos\Tarefas-php\app\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+#6 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(933): App\Controllers\LoginController->auth()
+#7 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 C:\Users\tania\OneDrive\Documentos\Tarefas-php\public\index.php(59): CodeIgniter\Boot::bootWeb()
+#12 C:\Users\tania\OneDrive\Documentos\Tarefas-php\system\rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2025-12-06 22:35:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: POST, Route: login/auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\tania\\OneDrive\\Documentos\\Tarefas-php\\public\\index.php')
+DEBUG - 2025-12-06 22:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:36:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 22:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:18:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:18:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 20:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:45:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-06 23:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

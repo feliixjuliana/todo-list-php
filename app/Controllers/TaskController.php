@@ -28,12 +28,12 @@ class TaskController extends BaseController{
         $post = $this->request->getPost();
 
         $this->taskModel->insert([
-            'user_id' => $userId,
-            'name' => $post['name'],
-            'description' => $post['description'],
-            'start_date' => $post['start_date'],
-            'end_date' => $post['end_date'],
-            'status' => 'pending'
+            'user_id'     => $userId,
+            'name'        => $post['name'] ?? '',
+            'description' => $post['description'] ?? '',
+            'start_date'  => $post['start_date'] ?? null,
+            'end_date'    => $post['end_date'] ?? null,
+            'status'      => 'pendente'
         ]);
 
         return redirect()->to(site_url('tasks'));
@@ -75,10 +75,10 @@ class TaskController extends BaseController{
         $events = [];
         foreach ($tasks as $t) {
             $events[] = [
-                'id' => $t['task_id'],
-                'title' => $t['name'],
-                'start' => $t['start_date'],
-                'end' => $t['end_date'],
+                'id'     => $t['task_id'],
+                'title'  => $t['name'],
+                'start'  => $t['start_date'],
+                'end'    => $t['end_date'],
                 'status' => $t['status']
             ];
         }

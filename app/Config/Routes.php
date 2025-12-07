@@ -23,6 +23,7 @@ $routes->post('login/auth', 'LoginController::auth');
 $routes->get('logout', 'LoginController::logout');
 
 $routes->get('tasks', 'TaskController::index');
+$routes->get('tasks/events', 'TaskController::eventsJson');
 $routes->post('tasks/store', 'TaskController::store');
 $routes->post('tasks/(:num)/status', 'TaskController::updateStatus/$1');
 $routes->post('tasks/(:num)/delete', 'TaskController::delete/$1');

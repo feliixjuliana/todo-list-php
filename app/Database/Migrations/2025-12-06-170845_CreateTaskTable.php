@@ -52,8 +52,7 @@ class CreateTasksTable extends Migration
         $this->forge->addKey('task_id', true);
         $this->forge->addKey('user_id');
         $this->forge->createTable('tasks', true);
-        $this->db->table('tasks')->addForeignKey('user_id', 'users', 'user_id', 'CASCADE', 'CASCADE');
-    }
+        $this->forge->addForeignKey('user_id', 'users', 'user_id', 'CASCADE', 'CASCADE');    }
 
     public function down()
     {
