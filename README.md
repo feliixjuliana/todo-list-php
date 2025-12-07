@@ -1,4 +1,4 @@
-# 🗓️ Agenda Eletrônica — Sistema de Tarefas
+# Agenda Eletrônica — Sistema de Tarefas
 
 ## O que é este projeto?
 
