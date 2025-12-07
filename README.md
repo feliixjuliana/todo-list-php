@@ -14,12 +14,7 @@ Cada usuário visualiza **somente suas próprias tarefas**, garantindo seguranç
 * Login / Logout
 * Criação de tarefas
 * Listagem de tarefas
-* Alteração de status (Pendente, Concluído, Cancelado)
-* Exclusão de tarefas
-* Exibição das tarefas no calendário
-* Modal inteligente que já abre com a data selecionada no calendário
 * Envio e recebimento de dados via JSON
-* Proteções: CSRF, sessão, foreign key, hash de senha
 
 ---
 
